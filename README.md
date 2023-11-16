@@ -13,9 +13,11 @@ The process of sentiment analysis using VADER model can be described as follows:
 VADER is a lexicon- and rule-based sentiment analysis tool that is specifically designed to work with social media text. It is a free and open-source tool that can be used to analyze text in a variety of languages. VADER is a popular choice for sentiment analysis because it is easy to use and produces accurate results.
 ## Program:
 Developed By : Mirudhula D
+
 Register No. : 212221230060
 
 import pandas as pd
+
 import vaderSentiment as vs
 
 # Read the Excel file
@@ -26,6 +28,7 @@ analyzer = vs.vaderSentiment.SentimentIntensityAnalyzer()
 
 # Calculate the sentiment scores for each text
 sentiment_scores = []
+
 for text in df['Text']:
     sentiment_scores.append(analyzer.polarity_scores(text))
 
@@ -35,11 +38,17 @@ texts = list(df['Text'])
 # Display the sentiment scores for each text
 for text, sentiment_score in zip(texts, sentiment_scores):
     print("\n\nText:", text)
+    
     print("Positive:", sentiment_score['pos'])
+    
     print("Negative:", sentiment_score['neg'])
+    
     print("Neutral:", sentiment_score['neu'])
+    
     print("Compound:", sentiment_score['compound'])
  
 ## Output:
+
+https://user-images.githubusercontent.com/75234991/244131103-691b5e3a-59d9-4cbc-9a7c-5d62d1fd45b8.png
 
 
